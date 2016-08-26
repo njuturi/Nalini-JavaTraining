@@ -21,7 +21,7 @@ public class NumberConvertions {
 		return result;
 	}
 
-	public void binaryToDecimal(BigInteger binaryNumber) {
+	public BigInteger binaryToDecimal(BigInteger binaryNumber) {
 
 		int power = 0;
 		BigInteger temp, decimalNo = BigInteger.ZERO, result = BigInteger.ZERO;
@@ -38,6 +38,8 @@ public class NumberConvertions {
 			}
 		}
 		System.out.println("DecimalNumber:" + decimalNo);
+		
+		return decimalNo;
 
 	}
 

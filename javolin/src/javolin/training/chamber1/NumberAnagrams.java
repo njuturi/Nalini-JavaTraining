@@ -1,22 +1,23 @@
 package javolin.training.chamber1;
 
-import java.util.Scanner;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-import java.math.BigInteger;
+import java.util.List;
+import java.util.Scanner;
 
 public class NumberAnagrams {
 	static int count = 0;
-	ArrayList<BigInteger> array = new ArrayList<BigInteger>();
+	List<String> list = new ArrayList<String>();
 
-	public ArrayList<BigInteger> generateAnagrams(String s1, String s2) {
+	public List<String> generateAnagrams(String s1, String s2) {
 
 		if (s2.length() <= 1) {
 			count++;
 			System.out.println(s1+s2);
-			array.add(new BigInteger(s1 + s2));
+			list.add(s1 + s2);
 		} else {
 			for (int i = 0; i < s2.length(); i++) {
 				String x = s2.substring(i, i + 1);
@@ -27,28 +28,35 @@ public class NumberAnagrams {
 			}
 		}
 
-		return array;
+		return list;
 	}
 
-	public void biggestAndSmallestOfAnagram(ArrayList<BigInteger> array) {
+	public List<String> biggestAndSmallestOfAnagram(List<String> list) {
 
-		Comparator<BigInteger> comparator = Collections.reverseOrder();
-		Collections.sort(array,comparator);
-		Iterator<BigInteger> iterator = array.iterator();
+		Comparator<String> comparator = Collections.reverseOrder();
+		Collections.sort(list,comparator);
+		Iterator<String> iterator = list.iterator();
 		while(iterator.hasNext()){
 			System.out.println(iterator.next());
 		}
-		System.out.println("Biggest Anagram:"+array.get(0));
-		System.out.println("Smallest Anagram:"+array.get(array.size()-1));
+		return list;
 	}
 
+	public String bigger(List<String> list){
+		return list.get(0);
+	}
+	
+	public String small(List<String> list){
+		int size = list.size();
+		return list.get(size-1);
+	}
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter The number");
 		String s = scanner.nextLine();
 		NumberAnagrams obj = new NumberAnagrams();
-		ArrayList<BigInteger> array = obj.generateAnagrams("", s);
+		List<String> array = obj.generateAnagrams("", s);
 		System.out.println("Total Number of Anagrams:" + count);
 		obj.biggestAndSmallestOfAnagram(array);
 		scanner.close();

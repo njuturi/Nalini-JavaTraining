@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class NPowersofTwo {
 
-	public static void nPowersOfTwo(BigInteger number) {
+	public static BigInteger nPowersOfTwo(BigInteger number) {
 
 		BigInteger result = BigInteger.ONE;
 		BigInteger sum = BigInteger.ZERO;
@@ -20,6 +20,8 @@ public class NPowersofTwo {
 
 		}
 		System.out.println("Sum Of Npowers:" + sum);
+		
+		return sum;
 	}
 
 	public static void main(String[] args) throws IOException {

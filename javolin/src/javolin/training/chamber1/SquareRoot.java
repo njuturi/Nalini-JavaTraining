@@ -6,7 +6,7 @@ import org.apache.commons.math3.complex.Complex;
 
 public class SquareRoot {
 
-	public static void squareRoot(double num) {
+	public static double squareRoot(double num) {
 		double squareResult, t, a;
 		
 		if(num>0){
@@ -17,11 +17,14 @@ public class SquareRoot {
 				squareResult = (t + a) / 2;
 			}while((t - squareResult) != 0);
 			System.out.println("squareResult:"+squareResult);
+			return squareResult;
 		}else if(num == 0){
 			System.out.println("squareResult:"+0);
+			return 0;
 		}else{
 			Complex number = new Complex(num);
 			System.out.println("squareResult:"+number.sqrt());
+			return number.sqrt().abs();
 		}
 	}
 
