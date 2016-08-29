@@ -1,4 +1,4 @@
-package javolin.training.chamber1;
+package com.github.njuturi.programs;
 
 import org.junit.After;
 import org.junit.Before;

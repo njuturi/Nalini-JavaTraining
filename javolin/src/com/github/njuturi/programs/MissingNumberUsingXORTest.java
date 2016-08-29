@@ -1,4 +1,4 @@
-package javolin.training.chamber1;
+package com.github.njuturi.programs;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class FindMissingNumberUsingXORTest {
+public class MissingNumberUsingXORTest {
 
 	@Before
 	public void setUp() throws Exception {
@@ -24,14 +24,14 @@ public class FindMissingNumberUsingXORTest {
 		a[2] = 4;
 		a[3] = 5;
 		System.out.println(a.length);
-		assertEquals(3,FindMissingNumberUsingXOR.findMiss(a,4));
+		assertEquals(3,MissingNumberUsingXOR.findMiss(a,4));
 	}
 	
 	@Test
 	public void testMissNumber1() {
 		int a[] = {1, 2, 4, 5, 6};
 		System.out.println(a.length);
-		assertEquals(3,FindMissingNumberUsingXOR.findMiss(a,a.length));
+		assertEquals(3,MissingNumberUsingXOR.findMiss(a,a.length));
 	}
 	
 

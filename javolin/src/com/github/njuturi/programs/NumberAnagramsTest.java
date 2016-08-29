@@ -1,9 +1,6 @@
-package javolin.training.chamber1;
+package com.github.njuturi.programs;
 
 import static org.junit.Assert.*;
-
-import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package javolin.training.chamber1;
+package com.github.njuturi.programs;
 
 import static org.junit.Assert.*;
 
@@ -35,8 +35,12 @@ public class FactorialNumberTest {
 	
 	@Test
 	public void testFactorial2() {
-		BigInteger a = new BigInteger("-10");
-		assertEquals("Please Enter Positive Values",FactorialNumber.factorial(a));
+		try{
+		FactorialNumber.factorial(new BigInteger("-10"));
+		fail("-ve number is not Valid Value");
+		}catch(IllegalArgumentException e){
+			assertTrue(true);
+		}
 		
 	}
 	
