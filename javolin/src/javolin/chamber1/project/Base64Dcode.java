@@ -3,18 +3,22 @@ package javolin.chamber1.project;
 //https://en.wikibooks.org/wiki/Algorithm_Implementation/Miscellaneous/Base64
 public class Base64Dcode {
 
-	private final static String base64chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+	private final static String base64CharSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
 	public static String base64Dcode(String s) {
-		String r = "";
-		for (int c = 0; c < s.length(); c += 4) {
+		String result = "";
+		for (int i = 0; i < s.length(); i += 4) {
 
-			int n = (base64chars.indexOf(s.charAt(c)) << 18) + (base64chars.indexOf(s.charAt(c + 1)) << 12)
-					+ (base64chars.indexOf(s.charAt(c + 2)) << 6) + base64chars.indexOf(s.charAt(c + 3));
-			r += "" + (char) ((n >>> 16) & 0xFF) + (char) ((n >>> 8) & 0xFF) + (char) (n & 0xFF);
+			int n = (base64CharSet.indexOf(s.charAt(i)) << 18) + 
+					(base64CharSet.indexOf(s.charAt(i + 1)) << 12)+ 
+					(base64CharSet.indexOf(s.charAt(i + 2)) << 6) + 
+					base64CharSet.indexOf(s.charAt(i + 3));
+			result += "" + (char) ((n >>> 16) & 0xFF) + 
+					(char) ((n >>> 8) & 0xFF) +
+					(char) (n & 0xFF);
 		}
 
-		return r;
+		return result;
 	}
 
 	public static void main(String a[]) {
