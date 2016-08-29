@@ -2,7 +2,7 @@ package javolin.chamber1.project;
 
 public class GetAddressUsingZipperCode {
 
-	public void printAddress(Address addr) {
+	public static void printAddress(Address addr) {
 
 		System.out.println(addr.getBuildingName());
 		System.out.println(addr.getPlotNo());

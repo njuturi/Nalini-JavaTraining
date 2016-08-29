@@ -11,13 +11,11 @@ import org.junit.Test;
 public class ZipperTestCase {
 
 	ZipperCodeGenerator zippergenerator;
-	GetAddressUsingZipperCode address;
 	LatAndLong latandlong;
 
 	@Before
 	public void setUp() throws Exception {
 		zippergenerator = new ZipperCodeGenerator();
-		address = new GetAddressUsingZipperCode();
 		latandlong = new LatAndLong();
 	}
 
@@ -86,7 +84,7 @@ public class ZipperTestCase {
 		String code = scanner.nextLine();
 		Address addressResult = zippergenerator.getZipperMap().get(code);
 		System.out.println(addressResult);
-		address.printAddress(addressResult);
+		GetAddressUsingZipperCode.printAddress(addressResult);
 		scanner.close();
 	}
 	
