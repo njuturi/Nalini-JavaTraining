@@ -1,5 +1,14 @@
 # nalini-java-training
-##Chamber1
+##Chamber1 Topics
+
+1. DataTypes
+2. Operators
+3. ControlFlow
+4. Junit Test
+5. Zippr Code Generation
+6. Convert Longitude and latitude from decimal to Degrees,Minutes and seconds.
+7. Base32,Base 64 encoding and decoding
+
 #Difference between logicaland(&&) and Bitwise(&) operator
 The && performs short-circuting evalutation where as & does not
 
