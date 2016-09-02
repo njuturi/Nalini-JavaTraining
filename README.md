@@ -341,3 +341,47 @@ First we need to identify expected exceptions and needs to be handled
 	}
 
 ```
+
+####Base32 Encoding Algoritham
+
+Base32 charset and how we encode the bytes into Base32 char format
+
+1.Divid the input bytes stream into blocks of 5 bytes.
+
+2.Divid 40 bits of each 5-byte block into 8 groups of 5 bits.
+
+3.Map each group of 5 bits to 1 printable character, based on the 5-bit value using the Base32 character set map.
+
+```java
+	base32code = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "23456789";
+Input Data          A         B         C        D        E
+Input Bits   01000001  01000010  01000011 01000100 01000101
+Padding      01000001  01000010  01000011 01000100 01000101
+                  \      |    \      |     |    \     \
+Bit Groups   01000 00101 00001 00100 00110 10001 00010 00101
+Mapping          I     F     B     E     G     R     C     F
+Overriding       I     F     B     E     G     R     C     F	
+
+```
+
+####Base64 Encoding Algoritham
+
+Base64 charset and how we encode the bytes into Base64 char format
+
+1.Divid the input bytes stream into blocks of 3 bytes.
+
+2.Divid 24 bits of each 3-byte block into 4 groups of 6 bits.
+
+3.Map each group of 6 bits to 1 printable character, based on the 6-bit value using the Base64 character set map.
+
+####Example
+
+```java
+
+Input Data          A        B        C
+Input Bits   01000001 01000010 01000011
+                   \      \      \
+Bit Groups   010000 010100 001001 000011
+Mapping           Q      U      J      D
+
+```
