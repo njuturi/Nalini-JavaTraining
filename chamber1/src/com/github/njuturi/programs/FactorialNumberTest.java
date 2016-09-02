@@ -36,7 +36,7 @@ public class FactorialNumberTest {
 	@Test
 	public void testFactorial2() {
 		try{
-		FactorialNumber.factorial(new BigInteger("-10"));
+		FactorialNumber.factorial(BigInteger.valueOf(-10));
 		fail("-ve number is not Valid Value");
 		}catch(IllegalArgumentException e){
 			assertTrue(true);
@@ -53,6 +53,13 @@ public class FactorialNumberTest {
 	
 	@Test
 	public void testFactorial4() {
+		BigInteger a = new BigInteger("28");
+		assertEquals("304888344611713860501504000000",FactorialNumber.factorial(a));
+		
+	}
+	
+	@Test
+	public void testFactorial5() {
 		BigInteger a = new BigInteger("28");
 		assertEquals("304888344611713860501504000000",FactorialNumber.factorial(a));
 		

@@ -31,4 +31,8 @@ public class SquareRootTest {
 		assertEquals("the Possible value is:",1111.11070555548,SquareRoot.squareRoot(1234567),0.001);
 	}
 
+	@Test
+	public void testSquareRoot2() {
+		assertEquals("the Possible value is:",2.0,SquareRoot.squareRoot(4),0.001);
+	}
 }

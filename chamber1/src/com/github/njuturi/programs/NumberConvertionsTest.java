@@ -33,6 +33,12 @@ public class NumberConvertionsTest {
 	}
 	
 	@Test
+	public void testDecimalToBinary1() {
+		obj = new NumberConvertions();
+		assertEquals(Integer.toBinaryString(5),obj.decimalToBinary(new BigInteger("5")).toString());
+	}
+	
+	@Test
 	public void testbinaryToDecimal() {
 		obj = new NumberConvertions();
 		assertEquals(new BigInteger("3271"),obj.binaryToDecimal(new BigInteger("110011000111")));

@@ -25,14 +25,16 @@ public class FactorialNumber {
 		}
 	}
 
-	/*
-	 * public static void main(String[] args) throws IOException { Scanner
-	 * scanner = new Scanner(System.in); System.out.println("Enter The number");
-	 * BigInteger number = scanner.nextBigInteger(); BigInteger result =
-	 * FactorialNumber.factorial(number); System.out.println(result);
-	 * scanner.close();
-	 * 
-	 * }
-	 */
+	
+	  public static void main(String[] args) throws IOException { 
+		  Scanner scanner = new Scanner(System.in); 
+		  System.out.println("Enter The number");
+		  BigInteger number = scanner.nextBigInteger(); 
+		  String result = FactorialNumber.factorial(number); 
+		  System.out.println(result);
+		  scanner.close();
+	  
+	  }
+	 
 
 }
