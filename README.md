@@ -309,7 +309,7 @@ First we need to identify expected exceptions and needs to be handled
 
 ```java
 
-	public  String convertLatDecimalToDMS(double latnumber) {
+	public  String convertLatOrLongDecimalToDMS(double latnumber) {
 
 		StringBuilder builder = new StringBuilder();
 
@@ -320,9 +320,9 @@ First we need to identify expected exceptions and needs to be handled
 			builder.append("E");
 		}
 		//in case of longitude this is the change only
-		if (latnumber < 0) {
+		if (longNumber < 0) {
 			builder.append("S");
-			latnumber = Math.abs(latnumber);
+			longNumber = Math.abs(latnumber);
 		} else {
 			builder.append("N");
 		}
@@ -339,6 +339,10 @@ First we need to identify expected exceptions and needs to be handled
 
 		return builder.toString();
 	}
+	
+	O/P: latandlong.convertLatOrLongDecimalToDMS(-123.678)
+		latitude : W123°40.68'40.8"
+		longitude: S123°40.68'40.8
 
 ```
 
