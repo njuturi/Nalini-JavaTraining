@@ -210,6 +210,76 @@ For example if we use "long" datatype to store factorial number result will stor
 5. E: Error Conditions
 6. P:Performence charecteristics
 	
+#### Are the results right
 
+Need to check the results are expected results or not
+
+Example: 
+```java
+ 	@Test
+	public void testFactorial() {
+		BigInteger a = new BigInteger("5");
+		assertEquals("120",FactorialNumber.factorial(a));
+		
+	}
+```
+#### Boundary Conditions
+
+Need to cross check with all possible negitive conditions
+
+#####Example: 
+
+``` java
+   @Test
+	public void decimalToHexTest() {
+		obj =new HexToDecimal();
+		BigInteger a = new BigInteger("9223372036854775807");
+		assertEquals("7fffffffffffffff",obj.decimalToHex(a));
+	}
+	
+	@Test
+	public void testTriangle4() {
+		try{
+		 FindTriangle.getTriangle(-40.2, -60.3, -70.8);
+		 fail("The arguments are invalid");
+		}catch(IllegalArgumentException e){
+			assertTrue(true);
+		}
+	}
+```
+
+#### Inverse Relations
+
+Some times the methods calculate square roots 	by squaring the result testing that those are nearly close or not.
+
+#####Example
+
+```java
+
+	@Test
+	public void testSquareRootUsingInverse() 
+	{ 
+	double x = SquareRoot.squareRoot(4); 
+	assertEquals(4.0, x * x, 0.0001);
+	}
+
+```
+
+#### Cross check using other means
+
+calculate the results with our method next calculate the same with some library methods.
+compare if both are same or not
+
+#####Example
+
+```java
+
+@Test
+	public void testDecimalToBinary1() {
+		obj = new NumberConvertions();
+		assertEquals(Integer.toBinaryString(5),obj.decimalToBinary(new BigInteger("5")).toString());
+	}
+	
+```
 
 
