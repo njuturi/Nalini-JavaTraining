@@ -378,6 +378,8 @@ Base64 charset and how we encode the bytes into Base64 char format
 
 ```java
 
+base64code = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvwxyz" + "0123456789"+ "+/";
+
 Input Data          A        B        C
 Input Bits   01000001 01000010 01000011
                    \      \      \
