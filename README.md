@@ -282,4 +282,62 @@ compare if both are same or not
 	
 ```
 
+#### Error Conditions
 
+First we need to identify expected exceptions and needs to be handled
+
+#####Example
+
+```java
+
+@Test
+	public void test() {
+		try{
+			FibonacciSequence.getFibonacciSeries(BigInteger.valueOf(-10));
+			fail("This is not valid for negitive value");
+		}catch(IllegalArgumentException e){
+			assertTrue(true);
+		}
+	}
+```
+
+##Zippr Project
+
+####latitude and longitude convertions from decimal to degrees,minutes and seconds
+
+#####Example Algoritham
+
+```java
+
+	public  String convertLatDecimalToDMS(double latnumber) {
+
+		StringBuilder builder = new StringBuilder();
+
+		if (latnumber < 0) {
+			builder.append("W");
+			latnumber = Math.abs(latnumber);
+		} else {
+			builder.append("E");
+		}
+		//in case of longitude this is the change only
+		if (latnumber < 0) {
+			builder.append("S");
+			latnumber = Math.abs(latnumber);
+		} else {
+			builder.append("N");
+		}
+
+		double latSeconds = latnumber * 3600;
+		int degrees = (int) latSeconds / 3600;
+		double latMinutes = (latSeconds % 3600) / 60;
+		latMinutes = Math.round(latMinutes * 100.0) / 100.0;
+		latSeconds = latSeconds % 60;
+		latSeconds = Math.round(latSeconds * 100.0) / 100.0;
+		builder.append(degrees + "°" + latMinutes + "'" + latSeconds + "\"");
+
+		System.out.println(builder.toString());
+
+		return builder.toString();
+	}
+
+```
