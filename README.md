@@ -5,7 +5,7 @@
 * [Operators](#operators)
 * [BigIntegerClass](#bigintegerclass)
 * [JUnit Test](#junit-testing)
-	* [Junit TestCase Structre](#junit-test-case-structure)
+	* [Junit TestCase Structure](#junit-test-case-structure)
 	* [JUnit Asserts](#junit-asserts)
 	* [BICEP](#bicep)
 * [ZipprProject](#zippr-project)
@@ -158,7 +158,7 @@ For example if we use "long" datatype to store factorial number result will stor
 ```
 
 #JUNIT Testing
-###Junit Test case structre
+###Junit Test case structure
 
 ```java
 	import org.junit.After;
