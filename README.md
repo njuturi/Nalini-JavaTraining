@@ -1,15 +1,21 @@
 # nalini-java-training
+
 ##Chamber1 Topics
 
-1. DataTypes
-2. Operators
-3. ControlFlow
-4. Junit Test
-5. Zippr Code Generation
-6. Convert Longitude and latitude from decimal to Degrees,Minutes and seconds.
-7. Base32,Base 64 encoding and decoding
+* [Operators](#operators)
+* [BigIntegerClass](#bigintegerclass)
+* [JUnit Test](#junit-testing)
+	* [Junit TestCase Structre](#junit-test-case-structure)
+	* [JUnit Asserts](#junit-asserts)
+	* [BICEP](#bicep)
+* [ZipprProject](#zippr-project)
+	* [Latitude And Longitude Convertion to Degrees,Minutes and seconds](#latitude-and-longitude)
+	* [Base32 Encoding Algoritham](#base32-encoding-algoritham)
+	* [Base64 Encoding Algoritham](#base64-encoding-algoritham)
 
 #Difference between logicaland(&&) and Bitwise(&) operator
+#Operators
+
 The && performs short-circuting evalutation where as & does not
 
 
@@ -85,6 +91,8 @@ This << operator is used to move the bits to leftside and >> operator is used to
 		i: 	0000 1010--- 10
 		i<<2:   0010 1000---  40
 		i>>2:   0000 0010 --- 2
+		
+#bigIntegerclass
 		
 ##java.math.BigInteger class
 The BigInteger allocates the memory as much as it.
@@ -210,6 +218,7 @@ For example if we use "long" datatype to store factorial number result will stor
 		assertEquals("the Possible value is:",1111.11070555548,SquareRoot.squareRoot(1234567),0.001);
 	}
 ```
+#BICEP
 ##what to test: The Right-BICEP
 
 1. Right : Are the results right
@@ -311,6 +320,7 @@ First we need to identify expected exceptions and needs to be handled
 ```
 
 ##Zippr Project
+#Latitude And Longitude
 
 ####latitude and longitude convertions from decimal to degrees,minutes and seconds
 
@@ -400,3 +410,9 @@ Bit Groups   010000 010100 001001 000011
 Mapping           Q      U      J      D
 
 ```
+
+#Chamber2
+
+1.StringMetrics
+2.Inheritance
+
