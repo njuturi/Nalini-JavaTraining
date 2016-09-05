@@ -13,6 +13,11 @@
 	* [Base32 Encoding Algoritham](#base32-encoding-algoritham)
 	* [Base64 Encoding Algoritham](#base64-encoding-algoritham)
 
+##Chamber2 Topics
+
+* [String Metrics](#string-metrics)
+	* [Levenshtein Distance](#levenshtein-distance)
+
 #Difference between logicaland(&&) and Bitwise(&) operator
 #Operators
 
@@ -413,6 +418,88 @@ Mapping           Q      U      J      D
 
 #Chamber2
 
-1.StringMetrics
-2.Inheritance
+##String Metrics
+#Levenshtein Distance
+
+Levenshtein distance is a measure of the similarity between two strings, which we will refer to as the source string (s) and the target string (t). The distance is the number of deletions, insertions, or substitutions required to transform s into t. 
+
+For example,
+
+If s is "test" and t is "test", then LD(s,t) = 0, because no transformations are needed. The strings are already identical.
+If s is "test" and t is "tent", then LD(s,t) = 1, because one substitution (change "s" to "n") is sufficient to transform s into t.
+
+```java
+
+public class LavenshteinDistance {
+
+	private int Minimum(int a, int b, int c) {
+		int mi;
+		mi = a;
+		if (b < mi) {
+			mi = b;
+		}
+		if (c < mi) {
+			mi = c;
+		}
+		return mi;
+	}
+
+	public int LD(String s, String t) {
+		int d[][];
+		int n;
+		int m;
+		int i;
+		int j;
+		char s_i;
+		char t_j;
+		int cost;
+		n = s.length();
+		m = t.length();
+		if (n == 0) {
+			return m;
+		}
+		if (m == 0) {
+			return n;
+		}
+		d = new int[n + 1][m + 1];
+		for (i = 0; i <= n; i++) {
+			d[i][0] = i;
+		}
+
+		for (j = 0; j <= m; j++) {
+			d[0][j] = j;
+		}
+		for (i = 1; i <= n; i++) {
+
+			s_i = s.charAt(i - 1);
+			for (j = 1; j <= m; j++) {
+
+				t_j = t.charAt(j - 1);
+				if (s_i == t_j) {
+					cost = 0;
+				} else {
+					cost = 1;
+				}
+				d[i][j] = Minimum(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+			}
+
+		}
+		return d[n][m];
+
+	}
+
+	public static void main(String[] args) {
+		int result = new LavenshteinDistance().LD("look at", "google");
+		System.out.println(result);
+
+	}
+
+}
+
+	O/p: 5
+
+
+```
+
+
 
