@@ -569,12 +569,12 @@ o/p: LongestCommonSubSequece:tsitest
 		  String s2 = "abcd"
 		  o/p: Longest Common Substring : abcd
 		  
-		  a b c d e f
-		0 0 0 0 0 0 0
-	    a   0 1 0 0 0 0 0
-	    b   0 0 2 0 0 0 0 
-	    c   0 0 0 3 0 0 0
-	    d   0 0 0 0 4 0 0
+		         a b c d e f
+		    0	 0 0 0 0 0 0
+		a   0	 1 0 0 0 0 0
+	    	b   0 	 0 2 0 0 0 0 
+		c   0  	 0 0 3 0 0 0
+	    	d   0 	 0 0 0 4 0 0
 ```
 
 ###Program
