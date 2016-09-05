@@ -17,6 +17,8 @@
 
 * [String Metrics](#string-metrics)
 	* [Levenshtein Distance](#levenshtein-distance)
+	* [Longest Common Subsequence](#longest-common-subsequence)
+	* [Longest Common SubString](#longest-common-substring)
 
 #Difference between logicaland(&&) and Bitwise(&) operator
 #Operators
@@ -428,6 +430,8 @@ For example,
 If s is "test" and t is "test", then LD(s,t) = 0, because no transformations are needed. The strings are already identical.
 If s is "test" and t is "tent", then LD(s,t) = 1, because one substitution (change "s" to "n") is sufficient to transform s into t.
 
+Reference : http://people.cs.pitt.edu/~kirk/cs1501/Pruhs/Fall2006/Assignments/editdistance/Levenshtein%20Distance.htm
+
 ```java
 
 public class LavenshteinDistance {
@@ -498,6 +502,118 @@ public class LavenshteinDistance {
 
 	O/p: 5
 
+
+```
+
+#Longest Common Subsequence
+
+The longest common subsequence (or LCS) of groups A and B is the longest group of elements from A and B that are common between the two groups and in the same order in each group. 
+
+```java
+For example, the sequences "1234" and "1224533324" have an LCS of "1234"
+```
+
+##ExampleProg
+
+```java
+
+public class LongestCommonSubsequence {
+	
+	public static String longestsubSequence(String a,String b){
+		int[][] lengths = new int[a.length()+1][b.length()+1]; 
+		
+		for (int i = 0; i < a.length(); i++){
+	        for (int j = 0; j < b.length(); j++){
+	            if (a.charAt(i) == b.charAt(j))
+	                lengths[i+1][j+1] = lengths[i][j] + 1;
+	            else
+	                lengths[i+1][j+1] =
+	                    Math.max(lengths[i+1][j], lengths[i][j+1]);
+	        }
+		}
+		System.out.println(lengths[a.length()][b.length()]);
+		StringBuffer sb = new StringBuffer();
+	    for (int x = a.length(), y = b.length();
+	         x != 0 && y != 0; ) {
+	        if (lengths[x][y] == lengths[x-1][y])
+	            x--;
+	        else if (lengths[x][y] == lengths[x][y-1])
+	            y--;
+	        else {
+	            assert a.charAt(x-1) == b.charAt(y-1);
+	            sb.append(a.charAt(x-1));
+	            x--;
+	            y--;
+	        }
+	    }
+		return sb.reverse().toString();
+		
+	}
+	public static void main(String[] args) {
+		String a = longestsubSequence("thisisatest","testing123testing");
+		System.out.println(a);
+
+	}
+
+}
+o/p: LongestCommonSubSequece:tsitest
+
+```
+
+#Longest Common SubString
+
+	This is nothing but the longest common string of given teo strings.
+	
+```java
+	Example : String s1 = "abcdef"
+		  String s2 = "abcd"
+		  o/p: Longest Common Substring : abcd
+```
+
+###Program
+
+```java
+
+public class LongestCommonSubString {
+
+	public static String commonString(String s1, String s2) {
+		int m = s1.length();
+		int n = s2.length();
+		int r[][] = new int[m][n];
+
+		int subStringLength = 0;
+		StringBuilder sb = new StringBuilder();
+
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+				if (s1.charAt(i) == s2.charAt(j)) {
+					if (i == 0 || j == 0) {
+						r[i][j] = 1;
+						sb.append(s1.charAt(i));
+					} else {
+						r[i][j] = r[i - 1][j - 1] + 1;
+						sb.append(s1.charAt(i));
+					}
+					if (subStringLength < r[i][j]) {
+						subStringLength = r[i][j];
+					}
+				}
+			}
+		}
+		System.out.println("SubStringLength:"+subStringLength);
+
+		return sb.toString();
+	}
+
+	public static void main(String[] args) {
+		String s = LongestCommonSubString.commonString("abcdef", "abcdefghi");
+		System.out.println(s);
+	}
+
+}
+
+O/p: 	SubStringLength:6
+	LongestCommonSubStringabcdef
 
 ```
 
