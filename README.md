@@ -16,7 +16,7 @@
 ##Chamber2 Topics
 
 * [String Metrics](#string-metrics)
-	* [Levenshtein Distance](#https://github.com/njuturi/nalini-java-training/wiki/Levenshtein-Distance)
+	* [Levenshtein Distance](https://github.com/njuturi/nalini-java-training/wiki/Levenshtein-Distance)
 	* [Longest Common Subsequence](#longest-common-subsequence)
 	* [Longest Common SubString](#longest-common-substring)
 	* [Longest Palindromic Sequence](#longest-palindromic-sequence)
