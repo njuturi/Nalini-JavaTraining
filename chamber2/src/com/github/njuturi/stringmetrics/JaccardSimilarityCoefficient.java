@@ -1,5 +1,10 @@
 package com.github.njuturi.stringmetrics;
 
+/**
+ * References
+ * http://bytes4u.blogspot.in/2013/03/jaccard-coeffecient-and-implementation.html
+ */
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
