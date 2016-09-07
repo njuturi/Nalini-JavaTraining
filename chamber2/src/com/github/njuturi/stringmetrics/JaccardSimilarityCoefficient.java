@@ -130,7 +130,7 @@ public class JaccardSimilarityCoefficient {
 
 	public static void main(String arg[]) {
 
-		JaccardSimilarityCoefficient obj = new JaccardSimilarityCoefficient("apple", "a");
+		JaccardSimilarityCoefficient obj = new JaccardSimilarityCoefficient("apple", "appl");
 		obj.jaccardCoefficient();
 
 	}
