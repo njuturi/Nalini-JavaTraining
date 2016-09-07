@@ -17,6 +17,7 @@
 
 * [String Metrics](#string-metrics)
 	* [Levenshtein Distance](https://github.com/njuturi/nalini-java-training/wiki/Levenshtein-Distance)
+	* [Jaccard Similarity Coefficient](https://github.com/njuturi/nalini-java-training/wiki/Jaccard-Coefficient)
 	* [Longest Common Subsequence](https://github.com/njuturi/nalini-java-training/wiki/Longest-Common-Subsequence)
 	* [Longest Common SubString](https://github.com/njuturi/nalini-java-training/wiki/Longest-Common-SubString)
 	* [Longest Palindromic Sequence](https://github.com/njuturi/nalini-java-training/wiki/Longest-Palindromic-Sequence)
